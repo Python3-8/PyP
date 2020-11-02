@@ -8,4 +8,4 @@ def main(filename):
     print(tokens)
 
 if __name__ == '__main__':
-    main('ex.zs')
+    main('ex.pyp')
