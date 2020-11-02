@@ -1,3 +1,4 @@
+from pprint import pprint
 from lexer import Lexer
 
 def main(filename):
@@ -5,7 +6,7 @@ def main(filename):
         code = file.readlines()
     lexer = Lexer(code)
     tokens = lexer.lex()
-    print(tokens)
+    pprint(tokens)
 
 if __name__ == '__main__':
     main('ex.pyp')
