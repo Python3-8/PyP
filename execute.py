@@ -1,4 +1,5 @@
 from pyp.lexer import Lexer
+from pyp.executer import Executer
 from pyp.parser import Parser
 
 
@@ -11,6 +12,8 @@ def main(filename):
     ast = parser.parse()
     if not ast:
         ast.raise_()
+    executer = Executer(ast)
+    executer.execute()
 
 
 if __name__ == '__main__':

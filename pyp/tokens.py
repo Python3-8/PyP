@@ -1,4 +1,4 @@
-FUNCS = ['writeLine']
+FUNCS = ['write']
 NL = {'id': 'nl', 'val': '\n'}
 LEFT_BPB = {'id': 'ang-brac', 'val': '<'}
 RIGHT_BPB = {'id': 'ang-brac', 'val': '>'}

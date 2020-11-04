@@ -4,6 +4,7 @@ class Error:
 
     def raise_(self):
         print(type(self).__name__ + ': ' + self.msg)
+        quit()
 
     def __bool__(self):
         return False

@@ -1,6 +1,6 @@
 class AST:
-    def __init__(self):
-        self.py = ''
+    def __init__(self, py=''):
+        self.py = py
 
     def __add__(self, code):
-        return self.py + code + '\n'
+        return AST(self.py + code + '\n')

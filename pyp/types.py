@@ -1,0 +1,1 @@
+TYPES = ['str', 'int', 'float']
