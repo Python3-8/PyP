@@ -1,0 +1,1 @@
+FUNCS = ['writeLine']

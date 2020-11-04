@@ -1,4 +1,5 @@
 from codecs import decode
+from pyp.builtins import FUNCS
 from string import digits
 
 class Lexer:
@@ -6,7 +7,6 @@ class Lexer:
 		self.code = code
 		self.tokens = []
 		self.escape = False
-		self.funcs = ['writeLine']
 	
 	def lex(self):
 		for line in self.code:
@@ -15,7 +15,7 @@ class Lexer:
 			if line in '\n\t\r ':
 				continue
 			for char in line:
-				if chars in self.funcs:
+				if chars in FUNCS:
 					self.tokens.append({'id': 'func', 'val': chars})
 					chars = ''
 				if char == '"' and id == '':

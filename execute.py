@@ -1,5 +1,6 @@
 from pprint import pprint
-from lexer import Lexer
+from pyp.lexer import Lexer
+from pyp.parser import *
 
 def main(filename):
     with open(filename, 'r') as file:
@@ -9,4 +10,4 @@ def main(filename):
     pprint(tokens)
 
 if __name__ == '__main__':
-    main('ex.pyp')
+    main('code.pyp')
