@@ -1,0 +1,9 @@
+FUNCS = ['writeLine']
+NL = {'id': 'nl', 'val': '\n'}
+LEFT_BPB = {'id': 'ang-brac', 'val': '<'}
+RIGHT_BPB = {'id': 'ang-brac', 'val': '>'}
+COMMA_SEP = {'id': 'sep', 'val': ','}
+DIV_OP = {'id': 'op', 'val': '/'}
+MULT_OP = {'id': 'op', 'val': '*'}
+ADD_OP = {'id': 'op', 'val': '+'}
+SUB_OP = {'id': 'op', 'val': '-'}

@@ -1,5 +1,5 @@
 from codecs import decode
-from pyp.builtins import FUNCS
+from pyp.tokens import FUNCS, NL, LEFT_BPB, RIGHT_BPB, COMMA_SEP, DIV_OP, MULT_OP, ADD_OP, SUB_OP
 from string import digits
 
 
@@ -52,48 +52,61 @@ class Lexer:
                     id = ''
                     chars = ''
                     if char == '<':
-                        self.tokens.append({'id': 'ang-brac', 'val': '<'})
+                        # BPB stands for Brackets, Parenthesis, and Braces
+                        self.tokens.append(LEFT_BPB)
                         chars = ''
                     elif char == '>':
-                        self.tokens.append({'id': 'ang-brac', 'val': '>'})
+                        self.tokens.append(RIGHT_BPB)
                         chars = ''
                     elif char == ',':
-                        self.tokens.append({'id': 'sep', 'val': ','})
+                        self.tokens.append(COMMA_SEP)
+                        chars = ''
+                    elif char == '/':
+                        self.tokens.append(DIV_OP)
+                        chars = ''
+                    elif char == '*':
+                        self.tokens.append(MULT_OP)
+                        chars = ''
+                    elif char == '+':
+                        self.tokens.append(ADD_OP)
+                        chars = ''
+                    elif char == '-':
+                        self.tokens.append(SUB_OP)
                         chars = ''
                     elif char == ' ':
                         pass
                     elif char == '\n':
-                        self.tokens.append({'id': 'nl', 'val': '\n'})
+                        self.tokens.append(NL)
                     else:
                         chars += char
                     self.escape = False
                     continue
                 elif char == '<':
                     # BPB stands for Brackets, Parenthesis, and Braces
-                    self.tokens.append({'id': 'bpb', 'val': '<'})
+                    self.tokens.append(LEFT_BPB)
                     chars = ''
                 elif char == '>':
-                    self.tokens.append({'id': 'bpb', 'val': '>'})
+                    self.tokens.append(RIGHT_BPB)
                     chars = ''
                 elif char == ',':
-                    self.tokens.append({'id': 'sep', 'val': ','})
+                    self.tokens.append(COMMA_SEP)
                     chars = ''
                 elif char == '/':
-                    self.tokens.append({'id': 'op', 'val': '/'})
+                    self.tokens.append(DIV_OP)
                     chars = ''
                 elif char == '*':
-                    self.tokens.append({'id': 'op', 'val': '*'})
+                    self.tokens.append(MULT_OP)
                     chars = ''
                 elif char == '+':
-                    self.tokens.append({'id': 'op', 'val': '+'})
+                    self.tokens.append(ADD_OP)
                     chars = ''
                 elif char == '-':
-                    self.tokens.append({'id': 'op', 'val': '-'})
+                    self.tokens.append(SUB_OP)
                     chars = ''
                 elif char == ' ':
                     pass
                 elif char == '\n':
-                    self.tokens.append({'id': 'nl', 'val': '\n'})
+                    self.tokens.append(NL)
                 else:
                     chars += char
                 self.escape = False

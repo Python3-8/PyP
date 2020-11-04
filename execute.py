@@ -1,6 +1,5 @@
-from pprint import pprint
 from pyp.lexer import Lexer
-from pyp.parser import *
+from pyp.parser import Parser
 
 
 def main(filename):
@@ -8,7 +7,10 @@ def main(filename):
         code = file.readlines()
     lexer = Lexer(code)
     tokens = lexer.lex()
-    pprint(tokens)
+    parser = Parser(tokens)
+    ast = parser.parse()
+    if not ast:
+        ast.raise_()
 
 
 if __name__ == '__main__':
