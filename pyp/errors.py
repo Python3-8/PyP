@@ -12,3 +12,7 @@ class Error:
 
 class InvalidSyntaxError(Error):
     pass
+
+
+class InvalidTypeError(Error):
+    pass

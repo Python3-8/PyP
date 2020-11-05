@@ -4,3 +4,6 @@ class obj:
 
 class sep:
     pass
+
+class op:
+    pass
